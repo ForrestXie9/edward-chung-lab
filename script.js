@@ -3,12 +3,15 @@ const menuToggle = document.querySelector("[data-menu-toggle]");
 const navLinks = document.querySelectorAll(".nav a");
 
 function syncHeader() {
-  header.classList.toggle("is-scrolled", window.scrollY > 20);
+  if (!header) return;
+  header.classList.toggle("is-scrolled", header.classList.contains("inner") || window.scrollY > 20);
 }
 
-menuToggle.addEventListener("click", () => {
-  header.classList.toggle("is-open");
-});
+if (menuToggle) {
+  menuToggle.addEventListener("click", () => {
+    header.classList.toggle("is-open");
+  });
+}
 
 navLinks.forEach((link) => {
   link.addEventListener("click", () => header.classList.remove("is-open"));
@@ -27,13 +30,14 @@ window.addEventListener("scroll", syncHeader, { passive: true });
 syncHeader();
 
 const canvas = document.querySelector("[data-network]");
-const context = canvas.getContext("2d");
+const context = canvas ? canvas.getContext("2d") : null;
 let width = 0;
 let height = 0;
 let nodes = [];
 let pointer = { x: 0, y: 0, active: false };
 
 function resizeCanvas() {
+  if (!canvas || !context) return;
   const ratio = window.devicePixelRatio || 1;
   width = canvas.offsetWidth;
   height = canvas.offsetHeight;
@@ -55,6 +59,7 @@ function createNodes() {
 }
 
 function draw() {
+  if (!canvas || !context) return;
   context.clearRect(0, 0, width, height);
   context.fillStyle = "#102326";
   context.fillRect(0, 0, width, height);
@@ -103,19 +108,21 @@ function draw() {
   requestAnimationFrame(draw);
 }
 
-canvas.addEventListener("pointermove", (event) => {
-  const rect = canvas.getBoundingClientRect();
-  pointer = {
-    x: event.clientX - rect.left,
-    y: event.clientY - rect.top,
-    active: true,
-  };
-});
+if (canvas && context) {
+  canvas.addEventListener("pointermove", (event) => {
+    const rect = canvas.getBoundingClientRect();
+    pointer = {
+      x: event.clientX - rect.left,
+      y: event.clientY - rect.top,
+      active: true,
+    };
+  });
 
-canvas.addEventListener("pointerleave", () => {
-  pointer.active = false;
-});
+  canvas.addEventListener("pointerleave", () => {
+    pointer.active = false;
+  });
 
-window.addEventListener("resize", resizeCanvas);
-resizeCanvas();
-draw();
+  window.addEventListener("resize", resizeCanvas);
+  resizeCanvas();
+  draw();
+}
