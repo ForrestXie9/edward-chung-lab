@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Edward Chung Laboratory at The Hong Kong Polytechnic University, focused on Intelligent Transport Systems, traffic prediction, traffic signal optimisation, connected autonomous vehicles, and AI-driven transport modelling."
+    />
+    <title>Edward Chung Laboratory</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Back to top">
+        <span class="brand-mark">EC</span>
+        <span>
+          <strong>Edward Chung Laboratory</strong>
+          <small>Intelligent Transport Systems</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#people">Team</a>
+        <a href="#activities">Activities</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" data-menu-toggle>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <canvas class="hero-canvas" data-network aria-hidden="true"></canvas>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">The Hong Kong Polytechnic University</p>
+          <h1 id="hero-title">Edward Chung Laboratory</h1>
+          <p class="hero-copy">
+            We study Intelligent Transport Systems through traffic prediction, traffic management,
+            signal optimisation, connected autonomous vehicles, digital twins, simulation-based
+            optimisation, and AI-driven transport modelling.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#research">Explore Research</a>
+            <a class="button secondary" href="#contact">Join the Lab</a>
+          </div>
+        </div>
+        <div class="hero-metrics" aria-label="Laboratory overview">
+          <div>
+            <strong>9</strong>
+            <span>Research themes</span>
+          </div>
+          <div>
+            <strong>25+</strong>
+            <span>Team members and alumni</span>
+          </div>
+          <div>
+            <strong>ITS</strong>
+            <span>Core research area</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro" id="about" aria-labelledby="about-title">
+        <div class="section-kicker">About</div>
+        <div class="section-heading">
+          <h2 id="about-title">Welcome to Edward's webpage</h2>
+          <p>
+            Prof Edward Chung is Professor of Intelligent Transport Systems at The Hong Kong
+            Polytechnic University. He is an internationally recognised expert in the application of
+            ITS, with many years of experience as an engineer, academic, and researcher working
+            nationally and internationally.
+          </p>
+        </div>
+      </section>
+
+      <section class="section profile-section" aria-label="Professor Edward Chung biography">
+        <article class="professor-card">
+          <div class="professor-photo photo-slot" data-initials="EC">
+            <img
+              src="https://www.edwardchung.com/wp-content/uploads/2024/09/Edward-ICTTS-2024-Square-300x300.jpg"
+              alt="Prof Edward Chung"
+            />
+          </div>
+          <div>
+            <p class="eyebrow">Principal Investigator</p>
+            <h2>Prof Edward Chung</h2>
+            <p class="degree">B. Eng. (Hons), PhD, FIEAust</p>
+            <p>
+              Prior to joining PolyU, Edward was the inaugural Director of the Smart Transport
+              Research Centre and Professor of Intelligent Transport Systems at Queensland
+              University of Technology. He holds a Bachelor of Civil Engineering with Honours and a
+              PhD from Monash University.
+            </p>
+            <div class="link-row" aria-label="Academic links">
+              <a href="mailto:edward.cs.chung@polyu.edu.hk">Email</a>
+              <a href="https://orcid.org/0000-0001-6969-7764" target="_blank" rel="noreferrer">ORCID</a>
+              <a href="https://scholar.google.com.au/citations?user=UFrzhnMAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noreferrer">Google Scholar</a>
+              <a href="https://www.researchgate.net/profile/Edward-Chung-4" target="_blank" rel="noreferrer">ResearchGate</a>
+              <a href="https://www.linkedin.com/in/edwardchung/" target="_blank" rel="noreferrer">LinkedIn</a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="section research" id="research" aria-labelledby="research-title">
+        <div class="section-heading">
+          <div class="section-kicker">Research</div>
+          <h2 id="research-title">Research Areas</h2>
+        </div>
+        <div class="research-grid">
+          <article>
+            <span class="card-index">01</span>
+            <h3>Origin-destination prediction using knowledge-driven deep learning</h3>
+            <p>
+              A hierarchical framework predicts outflow first, then estimates flow probabilities
+              through a gravity-inspired network to obtain real-time OD matrices.
+            </p>
+          </article>
+          <article>
+            <span class="card-index">02</span>
+            <h3>LLM-assisted algorithm design for simulation-based optimisation</h3>
+            <p>
+              Large language models are used to design computationally efficient optimisers for
+              high-fidelity transportation simulation and optimisation.
+            </p>
+          </article>
+          <article>
+            <span class="card-index">03</span>
+            <h3>Traffic signal control evaluation, diagnosis, and optimisation</h3>
+            <p>
+              AI and digital twin technology support real-time analysis, predictive modelling, and
+              closed-loop traffic management.
+            </p>
+          </article>
+          <article>
+            <span class="card-index">04</span>
+            <h3>Deep learning surrogate-based traffic signal optimisation</h3>
+            <p>
+              Deep learning surrogate functions approximate simulation-based performance functions
+              and improve optimisation efficiency.
+            </p>
+          </article>
+          <article>
+            <span class="card-index">05</span>
+            <h3>Transit signal priority with multi-agent reinforcement learning</h3>
+            <p>
+              Cooperative TSP strategies adjust phase sequence and duration while balancing bus and
+              car operations under real-time conditions.
+            </p>
+          </article>
+          <article>
+            <span class="card-index">06</span>
+            <h3>Network-level traffic prediction under detector uncertainty</h3>
+            <p>
+              LSTM, multilayer perceptron, clustering, few-shot learning, and transfer learning are
+              combined for prediction with unreliable and limited data.
+            </p>
+          </article>
+          <article>
+            <span class="card-index">07</span>
+            <h3>Cooperative on-ramp merging for connected autonomous vehicles</h3>
+            <p>
+              Mixed integer nonlinear programming and decomposition algorithms coordinate lane
+              changes, vehicle sequences, and trajectories.
+            </p>
+          </article>
+          <article>
+            <span class="card-index">08</span>
+            <h3>Uncertainty quantification for traffic-related prediction</h3>
+            <p>
+              Deep learning models provide confidence intervals for bus arrival times, OD patterns,
+              and road-segment traffic flows.
+            </p>
+          </article>
+          <article>
+            <span class="card-index">09</span>
+            <h3>Modelling people's movements with Bluetooth sensor technology</h3>
+            <p>
+              Bluetooth scanning is used to model pedestrian mobility patterns and understand how
+              people navigate urban environments.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section interests" aria-labelledby="interests-title">
+        <div class="section-heading">
+          <div class="section-kicker">Focus</div>
+          <h2 id="interests-title">Research Interests</h2>
+        </div>
+        <div class="tag-list">
+          <span>Traffic speed prediction for non-recurring congestion</span>
+          <span>Cooperative freeway merging for CAV and mixed traffic</span>
+          <span>Reinforcement learning in traffic signal control</span>
+          <span>Surrogate model for traffic signal optimisation</span>
+          <span>Cooperative ITS considering packet loss</span>
+          <span>Capacity of signal-free intersections for mixed traffic</span>
+          <span>Transport modelling, traffic management and optimisation</span>
+        </div>
+      </section>
+
+      <section class="section people" id="people" aria-labelledby="people-title">
+        <div class="section-heading">
+          <div class="section-kicker">People</div>
+          <h2 id="people-title">Meet Our Team</h2>
+        </div>
+
+        <div class="team-group">
+          <h3>Post Doctoral Fellows</h3>
+          <div class="people-grid">
+            <article class="person-card"><div class="person-photo photo-slot" data-initials="MC"><img src="https://www.edwardchung.com/wp-content/uploads/2025/07/MC-Chan-Square.jpeg" alt="CHAN Ming Chung" /></div><h4>CHAN Ming Chung (MC)</h4></article>
+            <article class="person-card"><div class="person-photo photo-slot" data-initials="LG"><img src="https://www.edwardchung.com/wp-content/uploads/2024/10/Photo_Gaojunjie-Li-1024x1024.jpg" alt="LI GaoJunJie" /></div><h4>LI GaoJunJie</h4></article>
+            <article class="person-card"><div class="person-photo photo-slot" data-initials="TZ"><img src="https://www.edwardchung.com/wp-content/uploads/2024/09/Zhixian-Chen_formal-1024x1024.jpg" alt="TANG Zhixian" /></div><h4>TANG Zhixian</h4></article>
+            <article class="person-card"><div class="person-photo photo-slot" data-initials="WH"><img src="https://www.edwardchung.com/wp-content/uploads/2024/09/WU-Hao-1024x1024.jpg" alt="WU Hao" /></div><h4>WU Hao</h4></article>
+            <article class="person-card"><div class="person-photo photo-slot" data-initials="ZC"><img src="https://www.edwardchung.com/wp-content/uploads/2026/05/ZHANG-Cheng-Square-1024x1024.jpg" alt="ZHANG Cheng" /></div><h4>ZHANG Cheng</h4></article>
+            <article class="person-card"><div class="person-photo photo-slot" data-initials="ZY"><img src="https://www.edwardchung.com/wp-content/uploads/2024/09/ZHANG-Yang-1.jpg" alt="ZHANG Yang" /></div><h4>ZHANG Yang</h4></article>
+            <article class="person-card"><div class="person-photo photo-slot" data-initials="ZX"><img src="https://www.edwardchung.com/wp-content/uploads/2024/09/Xiexin-Zou.jpg" alt="ZOU Xiexin" /></div><h4>ZOU Xiexin</h4></article>
+          </div>
+        </div>
+
+        <div class="team-group">
+          <h3>Postgraduate Students</h3>
+          <div class="people-grid">
+            <article class="person-card"><div class="person-photo photo-slot" data-initials="ZR"><img src="https://www.edwardchung.com/wp-content/uploads/2024/09/Rong-Zhao-1024x1024.jpg" alt="ZHAO Rong" /></div><h4>ZHAO Rong</h4><p>PhD student</p></article>
+            <article class="person-card"><div class="person-photo photo-slot" data-initials="FT"><img src="https://www.edwardchung.com/wp-content/uploads/2024/09/Tingting-1024x1024.jpg" alt="FAN Tingting" /></div><h4>FAN Tingting</h4><p>PhD student</p></article>
+            <article class="person-card"><div class="person-photo photo-slot" data-initials="SB"><img src="https://www.edwardchung.com/wp-content/uploads/2024/09/SONG-Beiyu-1024x1024.jpg" alt="SONG Beiyu" /></div><h4>SONG Beiyu</h4><p>MPhil student</p></article>
+            <article class="person-card"><div class="person-photo photo-slot" data-initials="CM"><img src="https://www.edwardchung.com/wp-content/uploads/2025/06/CHEN-Maoning-Square-1024x1024.jpg" alt="CHEN Maonin" /></div><h4>CHEN Maonin</h4><p>PhD student</p></article>
+            <article class="person-card"><div class="person-photo photo-slot" data-initials="LC"><img src="https://www.edwardchung.com/wp-content/uploads/2025/06/LI-Changlin-Sqauare-1024x1024.jpg" alt="LI Changlin" /></div><h4>LI Changlin</h4><p>PhD student</p></article>
+            <article class="person-card"><div class="person-photo photo-slot" data-initials="XL"><img src="https://www.edwardchung.com/wp-content/uploads/2024/09/Lindong-XIE-1024x1024.jpg" alt="XIE Lindong" /></div><h4>XIE Lindong</h4><p>PhD student</p><a href="https://forrestxie9.github.io/Lindong_Xie/" target="_blank" rel="noreferrer">Personal site</a></article>
+            <article class="person-card"><div class="person-photo photo-slot" data-initials="HY"></div><h4>HAN Yihang</h4><p>PhD student</p></article>
+            <article class="person-card"><div class="person-photo photo-slot" data-initials="CD"><img src="https://www.edwardchung.com/wp-content/uploads/2024/09/Di-Chen-1024x1024.jpg" alt="CHEN Di" /></div><h4>CHEN Di</h4><p>PhD student</p></article>
+            <article class="person-card"><div class="person-photo photo-slot" data-initials="XZ"><img src="https://www.edwardchung.com/wp-content/uploads/2024/09/XING-Xeren.jpg" alt="XING Zeren" /></div><h4>XING Zeren</h4><p>PhD student</p></article>
+          </div>
+        </div>
+
+        <div class="team-columns">
+          <div class="team-group compact">
+            <h3>Research Assistants</h3>
+            <div class="people-grid two">
+              <article class="person-card"><div class="person-photo photo-slot" data-initials="BJ"><img src="https://www.edwardchung.com/wp-content/uploads/2024/09/BI-Jingyun.jpg" alt="BI Jingyun" /></div><h4>BI Jingyun</h4></article>
+              <article class="person-card"><div class="person-photo photo-slot" data-initials="ZH"><img src="https://www.edwardchung.com/wp-content/uploads/2024/11/Zhang-Haolin.jpg" alt="ZHANG Haolin" /></div><h4>ZHANG Haolin</h4></article>
+            </div>
+          </div>
+          <div class="team-group compact">
+            <h3>Exchange Students</h3>
+            <div class="mini-list">
+              <p><strong>XING Xeren</strong><span>The University of Tokyo</span></p>
+              <p><strong>ROCHAS Romain</strong><span>ENTPE, France</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-group compact">
+          <h3>Alumni</h3>
+          <div class="alumni-list">
+            <p><strong>Dr LONG Meng</strong><span>Chongqing Normal University</span></p>
+            <p><strong>Dr BI Xiaowen</strong><span>BNU-HKBU United International College</span></p>
+            <p><strong>Dr ZHOU Yue</strong><span>Macau University of Science and Technology</span></p>
+            <p><strong>Dr XIAO Zhuang</strong><span>Southwest Jiaotong University</span></p>
+            <p><strong>Dr CHEN Jieming</strong></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section activities" id="activities" aria-labelledby="activities-title">
+        <div class="section-heading">
+          <div class="section-kicker">Activities</div>
+          <h2 id="activities-title">Team Activities</h2>
+        </div>
+        <p class="section-lede">
+          During hiking activities, the team explores scenic trails while strengthening teamwork and
+          collaboration.
+        </p>
+        <div class="activity-grid">
+          <article><img src="https://www.edwardchung.com/wp-content/uploads/2025/12/758ec6de69d8e4e0f1a7e382547eed54-1024x683.jpg" alt="T3 Organic Tea Farm" /><h3>T3 Organic Tea Farm</h3><p>Yingde, December 2025</p></article>
+          <article><img src="https://www.edwardchung.com/wp-content/uploads/2025/12/2e73838b8fa209603c1ca2d84fa362a9-768x1024.jpg" alt="Dongtian Xianjing" /><h3>Dongtian Xianjing</h3><p>Yingde, December 2025</p></article>
+          <article><img src="https://www.edwardchung.com/wp-content/uploads/2024/12/Yuen-Tsuen-Ancient-Trail-1024x1024.jpg" alt="Yuen Tsuen Ancient Trail" /><h3>Yuen Tsuen Ancient Trail</h3><p>December 2024</p></article>
+          <article><div class="activity-placeholder">Photo space</div><h3>Yangtai Mountain Forest Park</h3><p>Shenzhen, September 2025</p></article>
+          <article><div class="activity-placeholder">Photo space</div><h3>Dragon's Back</h3><p>November 2024</p></article>
+          <article><div class="activity-placeholder">Photo space</div><h3>Jingshan Plank Road</h3><p>Zhuhai, September 2024</p></article>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact" aria-labelledby="contact-title">
+        <div class="contact-panel">
+          <div>
+            <div class="section-kicker">Contact</div>
+            <h2 id="contact-title">Vacancies for PhD, Research Assistant and Postdoc</h2>
+            <p>
+              Outstanding students interested in transportation engineering are encouraged to apply.
+              Candidates with a good GPA and strong analytical and programming skills are welcome.
+              A full-time Research Assistant position is also available to develop and implement
+              traffic simulation models using tools such as SUMO and Aimsun.
+            </p>
+          </div>
+          <address>
+            <strong>Edward Chung Laboratory</strong>
+            <span>The Hong Kong Polytechnic University</span>
+            <a href="mailto:edward.cs.chung@polyu.edu.hk">edward.cs.chung@polyu.edu.hk</a>
+            <span>Intelligent Transport Systems · Traffic modelling · Optimisation</span>
+          </address>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 Edward Chung Laboratory</p>
+      <a href="#top">Back to top</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
