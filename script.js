@@ -19,12 +19,31 @@ navLinks.forEach((link) => {
 
 document.querySelectorAll("img").forEach((image) => {
   image.addEventListener("error", () => {
+    if (image.matches("[data-hero-slide]")) {
+      image.remove();
+      return;
+    }
+
     const fallback = image.closest(".photo-slot");
     if (fallback) {
       image.remove();
     }
   });
 });
+
+let heroSlideIndex = 0;
+
+if (document.querySelectorAll("[data-hero-slide]").length > 1) {
+  window.setInterval(() => {
+    const heroSlides = Array.from(document.querySelectorAll("[data-hero-slide]"));
+    if (heroSlides.length < 2) return;
+
+    heroSlideIndex %= heroSlides.length;
+    heroSlides[heroSlideIndex].classList.remove("is-active");
+    heroSlideIndex = (heroSlideIndex + 1) % heroSlides.length;
+    heroSlides[heroSlideIndex].classList.add("is-active");
+  }, 5000);
+}
 
 window.addEventListener("scroll", syncHeader, { passive: true });
 syncHeader();

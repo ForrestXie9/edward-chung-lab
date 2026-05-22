@@ -21,6 +21,7 @@
         <a href="team.html">Team</a>
         <a href="publications.html">Publications</a>
         <a href="research.html">Research</a>
+        <a href="activities.html">Activities</a>
         <a href="vacancies.html">Vacancies</a>
       </nav>
       <button class="menu-toggle" type="button" aria-label="Open navigation" data-menu-toggle><span></span><span></span></button>
@@ -28,29 +29,64 @@
 
     <main>
       <section class="hero" aria-labelledby="hero-title">
-        <img
-          class="hero-bg"
-          src="https://www.edwardchung.com/wp-content/uploads/2024/09/ITS.jpg"
-          alt=""
-          aria-hidden="true"
-        />
+        <div class="hero-bg-track" aria-hidden="true">
+          <img
+            class="hero-bg is-active"
+            src="https://www.edwardchung.com/wp-content/uploads/2024/09/ITS.jpg"
+            alt=""
+            data-hero-slide
+          />
+          <img
+            class="hero-bg"
+            src="https://www.edwardchung.com/wp-content/uploads/2025/12/758ec6de69d8e4e0f1a7e382547eed54-1024x683.jpg"
+            alt=""
+            data-hero-slide
+          />
+          <img
+            class="hero-bg"
+            src="https://www.edwardchung.com/wp-content/uploads/2025/12/2e73838b8fa209603c1ca2d84fa362a9-768x1024.jpg"
+            alt=""
+            data-hero-slide
+          />
+          <img
+            class="hero-bg"
+            src="https://www.edwardchung.com/wp-content/uploads/2024/12/Yuen-Tsuen-Ancient-Trail-1024x1024.jpg"
+            alt=""
+            data-hero-slide
+          />
+        </div>
         <canvas class="hero-canvas" data-network aria-hidden="true"></canvas>
         <div class="hero-overlay"></div>
         <div class="hero-content">
           <p class="eyebrow">The Hong Kong Polytechnic University</p>
           <h1 id="hero-title">Urban Mobility Intelligence Laboratory</h1>
           <p class="hero-copy">
-            Urban Mobility Intelligence Laboratory at The Hong Kong Polytechnic University
-            conducts interdisciplinary research at the intersection of intelligent transportation
-            systems, artificial intelligence, urban computing, and digital twin technologies. The lab
-            develops robust and scalable methodologies for spatiotemporal mobility modelling,
-            uncertainty-aware traffic prediction, adaptive traffic signal control, connected and
-            autonomous transportation, simulation-driven optimisation, and AI-enabled urban
-            decision-making.
+            Urban Mobility Intelligence Laboratory at The Hong Kong Polytechnic University develops
+            AI-enabled methods for intelligent transportation systems, urban mobility modelling,
+            digital twins, traffic prediction, and transport optimisation.
           </p>
           <div class="hero-actions">
             <a class="button primary" href="research.html">Explore Research</a>
+            <a class="button secondary" href="team.html">Meet the Team</a>
             <a class="button secondary" href="vacancies.html">Join the Lab</a>
+          </div>
+          <div class="hero-summary" aria-label="Homepage overview">
+            <article>
+              <span>From</span>
+              <strong>The Hong Kong Polytechnic University</strong>
+            </article>
+            <article>
+              <span>Research</span>
+              <strong>AI, ITS, digital twins, CAV, traffic prediction</strong>
+            </article>
+            <article>
+              <span>People</span>
+              <strong>Led by Prof Edward Chung with 25+ members and alumni</strong>
+            </article>
+            <article>
+              <span>Openings</span>
+              <strong>PhD, RA, Postdoc, and visiting students</strong>
+            </article>
           </div>
         </div>
         <div class="hero-metrics" aria-label="Laboratory overview">
