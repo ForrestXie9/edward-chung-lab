@@ -48,6 +48,37 @@ if (document.querySelectorAll("[data-hero-slide]").length > 1) {
 window.addEventListener("scroll", syncHeader, { passive: true });
 syncHeader();
 
+// Theme Toggle Logic
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = themeToggle?.querySelector('.mode-icon');
+const themeText = themeToggle?.querySelector('.mode-text');
+
+function updateThemeUI(isDark) {
+  if (!themeIcon || !themeText) return;
+  themeIcon.textContent = isDark ? '☀️' : '🌙';
+  themeText.textContent = isDark ? 'Light' : 'Dark';
+}
+
+if (themeToggle) {
+  // Check for saved theme preference or system preference
+  const savedTheme = localStorage.getItem('theme');
+  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  
+  if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+    document.body.classList.add('dark-mode');
+    updateThemeUI(true);
+  }
+
+  themeToggle.addEventListener('click', () => {
+    const isDark = document.body.classList.toggle('dark-mode');
+    // Also track light mode specifically if system is dark
+    document.body.classList.toggle('light-mode', !isDark);
+    
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    updateThemeUI(isDark);
+  });
+}
+
 const canvas = document.querySelector("[data-network]");
 const context = canvas ? canvas.getContext("2d") : null;
 let width = 0;
