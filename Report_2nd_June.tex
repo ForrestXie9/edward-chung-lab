@@ -1,0 +1,146 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+
+\usetheme{Madrid}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usetikzlibrary{arrows.meta,positioning,fit}
+
+\definecolor{mainblue}{HTML}{1F5A8A}
+\definecolor{accentgreen}{HTML}{2E8B57}
+\definecolor{accentorange}{HTML}{D97706}
+\definecolor{softgray}{HTML}{F4F6F8}
+\definecolor{textgray}{HTML}{374151}
+
+\setbeamercolor{frametitle}{bg=mainblue,fg=white}
+\setbeamercolor{titlelike}{bg=mainblue,fg=white}
+\setbeamercolor{structure}{fg=mainblue}
+\setbeamercolor{block title}{bg=mainblue,fg=white}
+\setbeamercolor{block body}{bg=softgray,fg=textgray}
+\setbeamerfont{frametitle}{series=\bfseries}
+
+\begin{document}
+
+\begin{frame}[t]{Traffic Flow Generation}
+  \footnotesize
+  \begin{block}{Research Question}
+    How can we learn a \textbf{controllable}, \textbf{realistic}, and \textbf{executable} traffic flow generator when traffic supervision is incomplete, e.g., sparse observations and missing labels?
+  \end{block}
+
+  \vspace{0.18cm}
+  \centering
+  \[
+    \mathcal{G}_{\theta}:
+    (\mathcal{R}, \mathcal{P}, \mathbf{c})
+    \rightarrow
+    \mathcal{F}_{\mathrm{sim}},
+  \]
+  \vspace{-0.1cm}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \textbf{Input}
+      \begin{itemize}
+        \item $\mathcal{R}$: road network structure
+        \item $\mathcal{P}$: POIs and urban context
+        \item $\mathbf{c}$: time and scenario condition
+      \end{itemize}
+    \end{column}
+
+    \begin{column}{0.49\textwidth}
+      \textbf{Output}
+      \begin{itemize}
+        \item $\mathcal{F}_{\mathrm{sim}}$: executable traffic flow files for simulators
+        \item Contains flows indexed by intersection $i$, road link $e$, movement $m$, and time $t$
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[t]{Traffic Flow Generation}
+  \footnotesize
+  \begin{block}{Why It Matters}
+    Signal control algorithms need realistic, controllable, and executable traffic demand
+    for reliable evaluation, but real-world OD demand, routes, and turn movements are often
+    missing or only sparsely observed.
+  \end{block}
+
+  \vspace{0.35cm}
+  \textbf{Why labels are missing}
+  \begin{itemize}
+    \item Limited sensing coverage means many links and turns are never directly observed.
+    \item Privacy and data-sharing constraints prevent some traffic data from being publicly released.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Traffic Flow Generation}
+  \footnotesize
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \textbf{Generation target}
+      \begin{itemize}
+        \item Realistic traffic flow files runnable by a simulator, consistent with real-world traffic patterns
+        \item Controllable generation, allowing customization aligned with user preferences
+      \end{itemize}
+    \end{column}
+
+    \begin{column}{0.49\textwidth}
+      \textbf{Hierarchical generation:}
+      \[
+        \text{OD-time} \rightarrow \text{route}
+        \rightarrow \text{link/turn} \rightarrow \text{flow}
+      \]
+
+      \begin{itemize}
+        \item OD-time demand decomposition
+        \item Route assignment
+        \item Link/turn flow projection
+        \item Simulation flow-file generation
+      \end{itemize}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.3cm}
+  \begin{block}{Main Contributions}
+    \begin{enumerate}
+      \item We study traffic-flow generation for signal control algorithms.
+      \item We propose a hierarchical cascade from OD-time demand to routes, link/turn flows, and executable flow files.
+      \item We validate the framework on real networks and traffic counts across Austin, Chicago, NYC, San Francisco, and Washington DC under zero-shot, few-shot retrieval, and full-shot settings.
+    \end{enumerate}
+  \end{block}
+\end{frame}
+
+\begin{frame}[t]{Traffic Flow Generation}
+  \centering
+  \vspace{-0.1cm}
+  \IfFileExists{Figures/Overview.png}{%
+    \includegraphics[width=\textwidth,height=0.84\textheight,keepaspectratio]{Figures/Overview.png}
+  }{%
+    \fbox{%
+      \begin{minipage}[c][0.76\textheight][c]{0.92\textwidth}
+        \centering
+        Place the method figure here as \texttt{Figures/Overview.png}.
+      \end{minipage}
+    }
+  }
+\end{frame}
+
+\begin{frame}[t]{Inference}
+  \centering
+  \vspace{-0.1cm}
+  \IfFileExists{Figures/inference.png}{%
+    \includegraphics[width=\textwidth,height=0.84\textheight,keepaspectratio]{Figures/inference.png}
+  }{%
+    \fbox{%
+      \begin{minipage}[c][0.76\textheight][c]{0.92\textwidth}
+        \centering
+        Place the inference figure here as \texttt{Figures/inference.png}.
+      \end{minipage}
+    }
+  }
+\end{frame}
+
+\end{document}

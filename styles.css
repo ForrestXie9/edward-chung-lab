@@ -1893,6 +1893,102 @@ address a {
   margin-bottom: 8px;
 }
 
+.intro-research {
+  align-items: end;
+}
+
+.research-hero p {
+  max-width: 860px;
+}
+
+.research-projects {
+  padding-top: 18px;
+}
+
+.research-projects-intro {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.55fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: end;
+  margin-bottom: 34px;
+}
+
+.research-projects-intro h2 {
+  margin: 6px 0 0;
+  font-size: clamp(28px, 3vw, 40px);
+}
+
+.research-projects-intro p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.85;
+  text-align: justify;
+}
+
+.research-project-list {
+  display: grid;
+  gap: 34px;
+}
+
+.research-project {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  padding: 0;
+  border-top: none;
+}
+
+.research-project:first-child {
+  padding-top: 0;
+}
+
+.research-project-label {
+  color: var(--coral);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.research-slide-frame {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: 0 16px 36px rgba(120, 26, 42, 0.08);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.research-slide-frame:hover {
+  transform: translateY(-2px);
+  border-color: rgba(166, 25, 46, 0.18);
+  box-shadow: 0 18px 34px rgba(120, 26, 42, 0.12);
+}
+
+.research-slide-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #f5f0f1;
+}
+
+.research-note {
+  margin-top: 28px;
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--gold);
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(248, 236, 239, 0.55), rgba(255, 255, 255, 0.96));
+}
+
+.research-note p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
 /* News Section */
 .news-section {
   background: var(--white);
@@ -2115,6 +2211,10 @@ address a {
   .overview-grid,
   .news-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .research-projects-intro {
+    grid-template-columns: 1fr;
   }
 
   .professor-photo {
