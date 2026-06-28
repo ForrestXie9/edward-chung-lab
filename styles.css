@@ -1902,31 +1902,7 @@ address a {
 }
 
 .research-projects {
-  padding-top: 18px;
-}
-
-.research-projects-intro {
-  display: grid;
-  gap: 18px;
-  max-width: 980px;
-  margin-bottom: 42px;
-}
-
-.research-projects-intro h1 {
-  margin: 0;
-  max-width: 620px;
-  font-size: clamp(42px, 6vw, 78px);
-  line-height: 0.98;
-  letter-spacing: -0.04em;
-}
-
-.research-projects-intro p {
-  margin: 0;
-  max-width: 920px;
-  color: var(--muted);
-  font-size: 20px;
-  line-height: 1.75;
-  text-align: left;
+  padding-top: 0;
 }
 
 .research-project-list {
@@ -2215,10 +2191,6 @@ address a {
   .overview-grid,
   .news-grid {
     grid-template-columns: 1fr 1fr;
-  }
-
-  .research-projects-intro {
-    grid-template-columns: 1fr;
   }
 
   .professor-photo {
