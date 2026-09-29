@@ -7,14 +7,36 @@ function syncHeader() {
   header.classList.toggle("is-scrolled", header.classList.contains("inner") || window.scrollY > 20);
 }
 
-if (menuToggle) {
+function setMenuOpen(isOpen, restoreFocus = false) {
+  if (!header || !menuToggle) return;
+  header.classList.toggle("is-open", isOpen);
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+  if (restoreFocus) menuToggle.focus();
+}
+
+if (menuToggle && header) {
   menuToggle.addEventListener("click", () => {
-    header.classList.toggle("is-open");
+    setMenuOpen(!header.classList.contains("is-open"));
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && header.classList.contains("is-open")) {
+      setMenuOpen(false, true);
+    }
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!header.contains(event.target)) setMenuOpen(false);
+  });
+
+  window.matchMedia("(min-width: 1251px)").addEventListener("change", (event) => {
+    if (event.matches) setMenuOpen(false);
   });
 }
 
 navLinks.forEach((link) => {
-  link.addEventListener("click", () => header.classList.remove("is-open"));
+  link.addEventListener("click", () => setMenuOpen(false));
 });
 
 document.querySelectorAll("img").forEach((image) => {
@@ -63,7 +85,7 @@ if (themeToggle) {
   // Check for saved theme preference or system preference
   const savedTheme = localStorage.getItem('theme');
   const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  
+
   if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
     document.body.classList.add('dark-mode');
     updateThemeUI(true);
@@ -73,7 +95,7 @@ if (themeToggle) {
     const isDark = document.body.classList.toggle('dark-mode');
     // Also track light mode specifically if system is dark
     document.body.classList.toggle('light-mode', !isDark);
-    
+
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
     updateThemeUI(isDark);
   });

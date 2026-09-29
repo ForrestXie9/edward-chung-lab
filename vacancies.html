@@ -10,24 +10,24 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="site-header" data-header>
-      <a class="brand" href="index.html"><span class="brand-mark">UMI</span><span><strong>Urban Mobility Intelligence Laboratory</strong><small>UMI Lab</small></span></a>
-      <nav class="nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="team.html">Team</a><a href="publications.html">Publications</a><a href="research.html">Research</a><a href="activities.html">Activities</a><a class="active" href="vacancies.html">Vacancies</a></nav>
-      <button class="menu-toggle" type="button" aria-label="Open navigation" data-menu-toggle><span></span><span></span></button>
+      <a class="brand" href="index.html" aria-label="Urban Mobility Intelligence Laboratory home"><span class="brand-mark">UMI</span><span><strong>Urban Mobility Intelligence Laboratory</strong><small>The Hong Kong Polytechnic University</small></span></a>
+      <nav class="nav" id="main-navigation" aria-label="Main navigation"><a href="index.html">Home</a><a href="team.html">Team</a><a href="publications.html">Publications</a><a href="research.html">Research</a><a href="events.html">Events &amp; Announcements</a><a href="activities.html">Activities</a><a class="active" aria-current="page" href="vacancies.html">Vacancies</a></nav>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="main-navigation" aria-expanded="false" data-menu-toggle><span></span><span></span></button>
     </header>
-    <main>
-      <section class="hero hero-compact" aria-labelledby="hero-title">
+    <main id="main-content">
+      <div class="hero hero-compact" aria-hidden="true">
         <div class="hero-bg-track" aria-hidden="true">
           <img
             class="hero-bg is-active"
-            src="https://images.pexels.com/photos/3935702/pexels-photo-3935702.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            src="assets/images/hong-kong-mobility.jpg"
             alt=""
             data-hero-slide
           />
         </div>
-        <canvas class="hero-canvas" data-network aria-hidden="true"></canvas>
         <div class="hero-overlay"></div>
-      </section>
+      </div>
       
       <section class="page-main">
       <section class="page-hero">
@@ -104,7 +104,23 @@
       </section>
     </section>
     </main>
-    <footer class="site-footer"><p>© 2026 Urban Mobility Intelligence Laboratory</p><a href="index.html">Home</a></footer>
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-identity">
+          <a href="index.html" class="footer-name">Urban Mobility Intelligence Laboratory</a>
+          <p>The Hong Kong Polytechnic University</p>
+        </div>
+        <div class="footer-contact">
+          <p>Contact Prof. Edward Chung</p>
+          <a href="mailto:edward.cs.chung@polyu.edu.hk">edward.cs.chung@polyu.edu.hk</a>
+          <nav class="footer-links" aria-label="Academic profiles">
+            <a href="https://scholar.google.com.au/citations?user=UFrzhnMAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noreferrer">Google Scholar</a>
+            <a href="https://www.linkedin.com/in/edwardchung/" target="_blank" rel="noreferrer">LinkedIn</a>
+          </nav>
+        </div>
+        <p class="footer-copyright">© 2026 Urban Mobility Intelligence Laboratory</p>
+      </div>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>
